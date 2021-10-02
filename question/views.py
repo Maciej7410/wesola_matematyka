@@ -26,6 +26,7 @@ def result(request):
     c1 = int(a1) * int(b1)
     success = ''
 
+
     if int(a1) * int(b1) == int(result_views):
         success = "Dobrze"
         Count_model(point=1).save()
