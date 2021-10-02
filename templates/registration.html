@@ -1,21 +1,27 @@
 {% extends "home.html" %}
 
+<!--    {% block extrastylesheet%}-->
+
+<!--    {% endblock %}-->
+
+
 {% block content%}
     <h5 class="card-title">Tabliczka mnożenia</h5>
 
     <div class="alert alert-primary" role="alert">
         Zostań mistrzem z klasą
     </div>
+<body>
 
-
-<form action="" style='font-size:50px'>
+<form method="post" style='font-size:50px'>
+<!--    {% csrf_token %}-->
     <div class="container">
         <div class="row justify-content-center">
 
                 <input style='border: none ;width:60px;' type="text" name="a1" value="{{a}}"> *
                 <input style='border: none ;width:60px;' type="text" name="b1" value="{{b}}"> =
                 <input style='border: none ;width:100px;' type="text" name="result" autofocus>
-                <input type="submit" >
+                <input type="submit" value="save" >
 <!--                {% if result == 1 %}-->
 
 
@@ -45,5 +51,5 @@
 <br>
 {% endif %}
 <h1>Dobrych odpowiedzi jest {{count.point__sum}}</h1>
-
+</body>
 {% endblock%}

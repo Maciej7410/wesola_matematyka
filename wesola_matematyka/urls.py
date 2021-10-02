@@ -18,6 +18,8 @@ from django.urls import path
 from question.views import hello, home, result
 from question.models import Count_model
 
+admin.site.register(Count_model)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello', hello),

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, request
+from django.views.decorators.csrf import csrf_exempt
+
 from question.models import Count_model
 from django.db.models import Sum
 import random
@@ -17,12 +19,12 @@ def home(request):
             'imiona': [solution, 'Anna','Maciej']
         }
     )
-
+@csrf_exempt
 def result(request):
 
-    result_views = request.GET.get('result', 0)
-    a1 = request.GET.get('a1', '0')
-    b1 = request.GET.get('b1', '0')
+    result_views = request.POST.get('result', '0')
+    a1 = request.POST.get('a1', '0')
+    b1 = request.POST.get('b1', '0')
     c1 = int(a1) * int(b1)
     success = ''
 
