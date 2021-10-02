@@ -28,7 +28,7 @@ def result(request):
 
 
     if int(a1) * int(b1) == int(result_views):
-        success = "Dobrze"
+        success = "Brawo mistrzyni"
         Count_model(point=1).save()
     else:
         success= "Niestety do poprawki"
@@ -46,6 +46,7 @@ def result(request):
             'b': b,
             'a1': a1,
             'b1': b1,
+            'c1': c1,
             'succes': success,
             'count': Count_model.objects.all().aggregate(Sum('point')),
         }
