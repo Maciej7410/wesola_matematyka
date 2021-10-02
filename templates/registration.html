@@ -15,10 +15,11 @@
                 <input style='border: none ;width:60px;' type="text" name="a1" value="{{a}}"> *
                 <input style='border: none ;width:60px;' type="text" name="b1" value="{{b}}"> =
                 <input style='border: none ;width:100px;' type="text" name="result" autofocus>
-                {% if result %}
+                <input type="submit" >
+<!--                {% if result == 1 %}-->
 
-                    <input type="submit" >
-                {% endif%}
+
+<!--                {% endif%}-->
 
         </div>
     </div>
@@ -27,9 +28,22 @@
 
 <br>
 
-<h1>{{succes}}</h1>
-<h1> {{a1}} * {{b1}} = {{result}} </h1>
 <br>
-<h1>Dobrych odpowiedzi jest {{count}}</h1>
+{% if succes == 'Niestety do poprawki' %}
+    <h1> {{a1}} * {{b1}} <b>nie równa się </b> {{result}} </h1>
+    <br>
+    <br>
+    <h1 style="font-size:60px"> {{a1}} * {{b1}} <b> = </b> {{c1}} </h1>
+    <br>
+    <br>
+{% else %}
+    <h1><b>{{succes}}</b></h1>
+    <br>
+    <br>
+    <h1 style="font-size:60px"> {{a1}} * {{b1}} <b> = </b> {{c1}} </h1>
+<br>
+<br>
+{% endif %}
+<h1>Dobrych odpowiedzi jest {{count.point__sum}}</h1>
 
 {% endblock%}
